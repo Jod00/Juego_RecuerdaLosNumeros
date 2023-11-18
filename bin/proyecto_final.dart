@@ -26,29 +26,27 @@ void main() async {
   String? edad = stdin.readLineSync();
   salirDelPrograma(edad);
   int edadInt= ComprobarNumero(edad);
-
-  sujeto(codigo!, edadInt);
+  
+  var Sujeto = sujeto(codigo!, edadInt); 
 
   print('comienza el test...');
   Map resultadoDelTest= testDirecto();
 
-  sujeto.puntuacionDirecta = resultadoDelTest['aciertos'];
-  sujeto.puntuacionDirectSpan = resultadoDelTest['span']; 
+  Sujeto.puntuacionDirecta = resultadoDelTest['aciertos'];
+  Sujeto.puntuacionDirectSpan = resultadoDelTest['span']; 
 
   List<List<dynamic>> ListaDatos = [['Codigo','Edad','Dd','SpanDd', 
-  sujeto.codigo, sujeto.edad, sujeto.puntuacionDirecta, sujeto.puntuacionDirectSpan]];
+  Sujeto.codigo, Sujeto.edad, Sujeto.puntuacionDirecta, Sujeto.puntuacionDirectSpan]];
 
   String csv = ListToCsvConverter().convert(ListaDatos);
 
-  Directory directory = Directory('C:/Users/usuario/Desktop');
-  final path = directory.path+'/'+sujeto.codigo+'.csv';
+  Directory directory = Directory('C:/Users/usuario/Desktop/test');
+  final path = directory.path+'/'+Sujeto.codigo+'.csv';
   File file = await File(path);
   file.writeAsString(csv);
 
 }
 // fin de funcion Main ***
-
-
 
 Map testDirecto(){
   int aciertos= 0;

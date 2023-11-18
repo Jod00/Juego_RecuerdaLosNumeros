@@ -1,5 +1,5 @@
 class sujeto{
-  String _codigo;
+   String _codigo;
    int _edad;
 
   get codigo => this._codigo;
