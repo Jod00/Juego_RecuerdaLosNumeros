@@ -13,5 +13,12 @@ class sujeto{
    int? puntuacionDirecta;
    int? puntuacionDirectSpan;
 
+   int? puntuacionInverso;
+   int? puntuacionInversoSpan;
+   
+   int? puntuacionCreciente;
+   int? puntuacionCrecienteSpan;
+   int? puntuacionCrecienteIndices;
+   
    sujeto(this._codigo, this._edad);
 }
